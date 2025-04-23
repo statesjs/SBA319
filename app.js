@@ -8,7 +8,9 @@ const PORT = process.env.PORT || 5050;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //ROOT get request
-app.get("/", (req, res) => [res.send("Welcome to the DevLink API!")]);
+app.get("/", (req, res) => {
+  res.json("Welcome to the DevLink API!");
+});
 // Connect to Database + Start Server
 mongoose
   .connect(process.env.ATLAS_URI, {
