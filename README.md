@@ -2,6 +2,7 @@
 
 ## File Structure
 
+```
 SBA319/
 │
 ├── models/
@@ -19,6 +20,7 @@ SBA319/
 ├── package-lock.json
 ├── .env (to be created)
 └── node_modules/ (to be created)
+```
 
 ## Description
 
