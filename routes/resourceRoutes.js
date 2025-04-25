@@ -25,10 +25,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const updatedResource = await Resource.findByIdAndUpdate(id, req.body, {
-      new: true, // return the updated document, not the old one
-      runValidators: true, // run the schema validations
-    });
+    const updatedResource = await Resource.findByIdAndUpdate(id, req.body, {});
 
     if (!updatedResource) {
       return res.status(404).json({ message: "Resource not found" });
