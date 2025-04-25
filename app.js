@@ -3,13 +3,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 5050;
+const expressLayouts = require("express-ejs-layouts");
 
 //  Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //views
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "public/css"));
+app.use(expressLayouts);
 app.set("view engine", "ejs");
-app.use(express.static("./public/index.css"));
+
 //users ROUTER
 const userRoutes = require("./routes/userRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
@@ -20,7 +24,7 @@ app.use("/api/resources", resourceRoutes);
 app.use("/api/comments", commentRoutes);
 //ROOT get request + view
 app.get("/", (req, res) => {
-  res.render("./views/index.ejs");
+  res.render("index");
 });
 // Connect to Database + Start Server
 mongoose

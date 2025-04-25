@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SBA318: DevLink</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    
+    <h1>SBA319 API Endpoint Guide</h1>
+    <section>
+      <h2>Users</h2>
+      <div class="method">GET</div>
+      <ul>
+        <li><code>/api/users</code> - Get all users</li>
+        <li><code>/api/users/:id</code> - Get a user by ID</li>
+      </ul>
+      <div class="method">POST</div>
+      <ul>
+        <li><code>/api/users</code> - Create a new user</li>
+        <li> Request body example:</li>
+        <li><code>{"username": "insert username",</br>
+            "password": "xxxxxxx",</br>
+           "email": "insert email"}</code></li>
+      </ul>
+      
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <div class="method">GET</div>
+      <ul>
+        <li><code>/api/resources</code> - Get all resources</li>
+        <li><code>/api/resources/:id</code> - Get a resource by ID</li>
+
+      </ul>
+      <div class="method">POST</div>
+      
+      <ul>
+        <li><code>/resources</code> - Create a new resource</li>
+      
+        <li>Request body example:</li>
+        <li><code>{"title": "insert title",</br>
+           "body": "insert body",</br>
+           "link": "optional"
+        }</code> </li>
+      </ul>
+      <div class="method">PUT</div>
+      <ul>
+        <li><code>/resources/:id</code> - Update a resource by ID</li>
+        <li>Request body example: </li>
+        <li><code>{"title": "insert title",</br>
+            "body": "insert body",</br>
+            "link": "optional"
+         }</code> </li>
+      </ul>
+      <div class="method">DELETE</div>
+      <ul>
+        <li><code>/resources/:id</code> - Delete a resource</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Comments</h2>
+      <div class="method">GET</div>
+      <ul>
+        <li><code>/comments</code> - Get all comments</li>
+        <li><code>/comments/:id</code> - Get a comment by ID</li>
+      </ul>
+      <div class="method">POST</div>
+      <ul>
+        <li><code>/comments</code> - Create a new comment</li>
+        <li>Request body example: </li>
+        <li><code>{
+          "username": "insert username",</br>
+          "body": "insert body"
+          }</code></li>
+     
+      </ul>
+      <div class="method">PUT</div>
+      <ul>
+        <li><code>/comments/:id</code> - Update a comment by ID</li>
+        <li>Request body example: </li>
+        <li><code>{
+            "username": "insert username",</br>
+            "body": "insert body"
+            }</code></li>
+      </ul>
+      <div class="method">DELETE</div>
+      <ul>
+        <li><code>/comments/:id</code> - Delete a comment</li>
+      </ul>
+    </section>
+  </body>
+</html>

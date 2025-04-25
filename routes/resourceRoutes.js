@@ -53,5 +53,21 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// GET a resource by ID
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const resource = await Resource.findById(id);
+
+    if (!resource) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json(resource);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 //export
 module.exports = router;
