@@ -7,6 +7,9 @@ const PORT = process.env.PORT || 5050;
 //  Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+//views
+app.set("view engine", "ejs");
+app.use(express.static("./public/index.css"));
 //users ROUTER
 const userRoutes = require("./routes/userRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
@@ -15,9 +18,9 @@ const commentRoutes = require("./routes/commentRoutes");
 app.use("/api/users", userRoutes);
 app.use("/api/resources", resourceRoutes);
 app.use("/api/comments", commentRoutes);
-//ROOT get request
+//ROOT get request + view
 app.get("/", (req, res) => {
-  res.json("Welcome to the DevLink API!");
+  res.render("./views/index.ejs");
 });
 // Connect to Database + Start Server
 mongoose
