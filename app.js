@@ -14,7 +14,7 @@ app.use("/css", express.static(__dirname + "public/css"));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 
-//users ROUTER
+//ROUTERS
 const userRoutes = require("./routes/userRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
 const commentRoutes = require("./routes/commentRoutes");
