@@ -4,27 +4,30 @@
 
 ```
 SBA319/
-│
 ├── models/
-│ ├── post.model.js
-│ ├── resource.model.js
-│ └── user.model.js
-│
+│   ├── post.model.js
+│   ├── resource.model.js
+│   └── user.model.js
 ├── routes/
-│ ├── post.routes.js
-│ ├── resource.routes.js
-│ └── user.routes.js
-│
+│   ├── post.routes.js
+│   ├── resource.routes.js
+│   └── user.routes.js
+├── views/
+│   ├── index.ejs
+│   └── ...
+├── public/
+│   └── css/
+├── .gitignore
+├── README.md
 ├── app.js
-├── package.json
-├── package-lock.json
-├── .env (to be created)
-└── node_modules/ (to be created)
+├── .env (to be added by user)
+└── package.json (to be added by user)
+
 ```
 
 ## Description
 
-This project is a simple Node.js, Express, and MongoDB CRUD API for Dev Link with alot of kinks to be worked out.
+This project is a simple Node.js, Express, and MongoDB CRUD API for Dev Link with alot of kinks to be worked out. The base root end point will have a view that serves as a guide.
 
 ## Technologies Used
 
@@ -32,6 +35,7 @@ This project is a simple Node.js, Express, and MongoDB CRUD API for Dev Link wit
 - Express.js
 - MongoDB Atlas
 - Mongoose ODM
+- EJS
 
 ## How to Run Locally
 
