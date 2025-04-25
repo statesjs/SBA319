@@ -29,6 +29,9 @@ const userSchema = mongoose.Schema(
   }
 );
 
+//indexed to find users, everythign else shouldn't be accessed easily
+//also realized that adding "unique" auto creates an index for it
+userSchema.index({ username: 1 });
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;

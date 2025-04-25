@@ -26,5 +26,9 @@ const resourceSchema = mongoose.Schema(
     timestamps: true,
   }
 );
+//easiest to query, short and what people would search for
+resourceSchema.index({ title: 1 });
+//to help find resources by the newest addition
+resourceSchema.index({ createdAt: -1 });
 
 module.exports = mongoose.model("Resource", resourceSchema);

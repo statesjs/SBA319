@@ -12,7 +12,7 @@ const commentSchema = mongoose.Schema(
       required: true,
       type: String,
       minLength: 1,
-      maxLength: 100,
+      maxLength: 300,
     },
   },
   {
@@ -20,4 +20,6 @@ const commentSchema = mongoose.Schema(
   }
 );
 
+//the shorter of the two inputs, can make finding their related comments much easier
+commentSchema.index({ username: 1 });
 module.exports = mongoose.model("Comment", commentSchema);
