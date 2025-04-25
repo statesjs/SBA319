@@ -22,4 +22,38 @@ router.post("/", async (req, res) => {
   }
 });
 
+//PUT request
+router.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedComment = await Comment.findByIdAndUpdate(id, req.body, {});
+
+    if (!updatedComment) {
+      return res.status(404).json({ message: "Resource not found" });
+    }
+
+    res.status(200).json(updatedComment);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+//DELETE request
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedComment = await Comment.findByIdAndDelete(id);
+
+    if (!deletedComment) {
+      return res.status(404).json({ message: "Resource not found" });
+    }
+    res.status(200).json({ message: "Comment deleted successfully." });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+//export
+
 module.exports = router;
