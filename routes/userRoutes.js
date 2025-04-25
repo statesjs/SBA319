@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//POST
+//POST create a new user
 router.post("/", async (req, res) => {
   try {
     const user = await User.create(req.body);

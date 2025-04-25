@@ -9,8 +9,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //users ROUTER
 const userRoutes = require("./routes/userRoutes");
+const resourceRoutes = require("./routes/resourceRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 //implementing routes
 app.use("/api/users", userRoutes);
+app.use("/api/resources", resourceRoutes);
+app.use("/api/comments", commentRoutes);
 //ROOT get request
 app.get("/", (req, res) => {
   res.json("Welcome to the DevLink API!");
